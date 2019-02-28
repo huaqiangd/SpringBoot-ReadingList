@@ -1,14 +1,21 @@
-body{
+body {
     background-color: #cccccc;
-    font-family: Arial,sans-serif;
+    font-family: Arial, sans-serif;
 }
-.bookDescription{
+
+.bookDescription {
     font-size: 10pt;
 }
-.bookHeadline{
+
+.bookHeadline {
     font-size: 12pt;
     font-weight: bold;
 }
-label{
+
+label {
     font-weight: bold;
+}
+
+.errorPage {
+    font-size: 10pt;
 }

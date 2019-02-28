@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.chapter03.dao.UserMapperCustom">
+
+    <resultMap id="getUserFromDatabaseMap" type="com.example.chapter03.bo.UserInfo">
+        <id column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="last_password_change" property="lastPasswordChange"/>
+        <result column="auth" property="authorities"/>
+        <result column="enable" property="enable"/>
+    </resultMap>
+
+    <select id="getUserFromDatabase" parameterType="string" resultMap="getUserFromDatabaseMap">
+        select u.username,u.password,u.last_password_change,u.enable,
+        r.auth
+        from readinglist_user u
+        left join readinglist_role r on u.role_id=r.role_id
+        where u.username=#{username}
+    </select>
+
+</mapper>
+
